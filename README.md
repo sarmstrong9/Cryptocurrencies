@@ -11,7 +11,7 @@ The initial dataset needs to be cleaned and processed to fit the machine learnin
 ### Deliverable 1: Preprocessing the Data for PCA
 Using Pandas, clean up and preprocess the dataset in order to perform PCA in Deliverable 2.
 
-Initial Dataset is shown here:
+Initial Dataset is shown here: </br>
 ![Initial Data](results/del1_1_initial_data.png)
 
 Steps accomplished:
@@ -22,9 +22,9 @@ Steps accomplished:
     - All the rows that do not have coins being mined are removed
     - The CoinName column is dropped
 - A new DataFrame is created that stores all cryptocurrency names from the CoinName column and retains the index from the crypto_df DataFrame
-    ![New Dataframe](results/del1_2_cleaned_data.png) 
+    - ![New Dataframe](results/del1_2_cleaned_data.png) 
 - The get_dummies() method is used to create variables for the text features, which are then stored in a new DataFrame, "X"
-    ![Get Dummies df](results/del1_3_get_dummes.png)
+    - ![Get Dummies df](results/del1_3_get_dummes.png)
 - The features from the X DataFrame have been standardized using the StandardScaler fit_transform() function
 
 </br>
@@ -35,8 +35,7 @@ Using the Principal Component Analysis (PCA) algorithm, reduce the dimensions of
 Steps accomplished:
 - The PCA algorithm reduces the dimensions of the X DataFrame down to three principal components
 - The pcs_df DataFrame is created and has the following three columns, PC 1, PC 2, and PC 3, and has the index from the crypto_df DataFrame
-
-    ![PCS Dataframe](results/del2_1_pcs_dataframe.png)
+    - ![PCS Dataframe](results/del2_1_pcs_dataframe.png)
 
 </br>
 
@@ -46,10 +45,10 @@ Using the K-means algorithm, create an elbow curve using hvPlot to find the best
 Steps accomplished:
 - The K-means algorithm is used to cluster the cryptocurrencies using the PCA data, where the following steps have been completed:
     - An elbow curve is created using hvPlot to find the best value for K
-    ![Elbow Curve](results/del3_1_elbow_curve.png)
+    - ![Elbow Curve](results/del3_1_elbow_curve.png)
     - Predictions are made on the K clusters of the cryptocurrencies’ data
     - A new DataFrame is created with the same index as the crypto_df DataFrame and has the following columns: Algorithm, ProofType, TotalCoinsMined, TotalCoinSupply, PC 1, PC 2, PC 3, CoinName, and Class
-    ![New Df](results/del3_2_new_df.png)
+    - ![New Df](results/del3_2_new_df.png)
 
 </br>
 
@@ -58,12 +57,12 @@ Using scatter plots with Plotly Express and hvplot, visualize the distinct group
 
 Steps accomplished:
 - The clusters are plotted using a 3D scatter plot, and each data point shows the CoinName and Algorithm on hover
-    ![3D Scatter](results/del4_1_3D_scatter.png) 
+    - ![3D Scatter](results/del4_1_3D_scatter.png) 
 - A table with tradable cryptocurrencies is created using the hvplot.table() function
-    ![Table](results/del4_2_table.png)
+    - ![Table](results/del4_2_table.png)
 - The total number of tradable cryptocurrencies is printed
-    ![tradeable currencies](results/del4_3_cryptos.png)
+    - ![tradeable currencies](results/del4_3_cryptos.png)
 - A DataFrame is created that contains the clustered_df DataFrame index, the scaled data, and the CoinName and Class columns
-    ![New df](results/del4_3_new_df.png)
+    - ![New df](results/del4_3_new_df.png)
 - A hvplot scatter plot is created where the X-axis is "TotalCoinsMined", the Y-axis is "TotalCoinSupply", the data is ordered by "Class", and it shows the CoinName when you hover over the data point
-    ![Scatter plot](results/del4_3_scatter.png)
+    - ![Scatter plot](results/del4_3_scatter.png)
